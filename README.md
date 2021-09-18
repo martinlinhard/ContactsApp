@@ -10,7 +10,7 @@ At Startup sollen bereits vorhandene Kontakte aus einer Datei ("contacts.json") 
 
 Die App soll wie folgt aussehen:
 
-![IMG_20210918_093234](/home/martin/Downloads/IMG_20210918_093234.jpg)
+![app](./app.jpg)
 
 
 
