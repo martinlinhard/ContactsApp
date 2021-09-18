@@ -1,6 +1,8 @@
 from bl.contact_book import ContactBook
+from gui import Gui
 def main():
-    ContactBook()
+    gui = Gui()
+    gui.run()
     pass
 
 if __name__ == "__main__":

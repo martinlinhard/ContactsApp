@@ -1,13 +1,13 @@
 import json
 from json import JSONDecodeError
 from models.contact import Contact
+from tkinter import END
 
 FILE_NAME = "contacts.json"
 
 class ContactBook:
     def __init__(self):
-        self.contacts = [Contact("Testname", "Testmail")]
-        self.write_to_file()
+        self.load_data()
         pass
 
     def load_data(self):
@@ -31,4 +31,19 @@ class ContactBook:
         with open (FILE_NAME, 'w') as f:
             json.dump(contacts, f)
 
+    def add_contact(self, name, email, listbox):
+        # update own content
+        c = Contact(name, email)
+        self.contacts.append(c)
 
+        # update gui
+        listbox.insert(END, c.for_gui())
+
+    def get_contacts_list(self):
+        return list(map(lambda c : c.for_gui(), self.contacts))
+
+    def remove_contacts(self, indices):
+        # remove all contacts
+        contacts = list(map(lambda i: self.contacts[i], indices))
+        for c in contacts:
+            self.contacts.remove(c)
