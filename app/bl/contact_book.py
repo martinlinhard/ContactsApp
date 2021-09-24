@@ -31,13 +31,15 @@ class ContactBook:
         with open (FILE_NAME, 'w') as f:
             json.dump(contacts, f)
 
-    def add_contact(self, name, email, listbox):
+    # Listbox can be None in case the CLI is used
+    def add_contact(self, name, email, listbox = None):
         # update own content
         c = Contact(name, email)
         self.contacts.append(c)
 
-        # update gui
-        listbox.insert(END, c.for_gui())
+        if listbox:
+            # update gui
+            listbox.insert(END, c.for_gui())
 
     def get_contacts_list(self):
         return list(map(lambda c : c.for_gui(), self.contacts))

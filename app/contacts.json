@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "name": "elias",
+    "email": "elias.trummer@test.com",
+    "id": "1aa2c458-d5cb-4686-810a-27592e182d3e"
+  },
+  {
+    "name": "Elias",
+    "email": "elias.trummer@outlook.com",
+    "id": "53ec2a25-b5e2-4707-abf4-8e4f65fde89f"
+  }
+]
